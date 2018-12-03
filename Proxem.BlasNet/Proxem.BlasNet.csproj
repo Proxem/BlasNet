@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <TargetFrameworks>netstandard2.0</TargetFrameworks>
+        <Configurations>Debug;Release</Configurations>
+        <Title>BlasNet</Title>
+        <Version>1.1.0</Version>
+        <Copyright></Copyright>
+        <Description>
+        Base package for optimized operations on arrays. 
+        Uses Intel's MKL library to provide the main operations on arrays.
+        </Description>
+        <!-- <Summary>Base operations on arrays using Intel MKL</Summary> -->
+        <Authors>Jocelyn Coulmance, Guillaume Wenzek, Thomas Perrais, Jean-Marc Marty</Authors>
+        <Company>Proxem</Company>
+        <RepositoryUrl>https://git.dc3.proxem.net/Theanet.git</RepositoryUrl>
+        <PackageTags>arrays mkl base-functions</PackageTags>
+        <PackageReleaseNotes>migrated to .netstandard 2.0</PackageReleaseNotes>
+        <AssemblyVersion>1.1.0</AssemblyVersion>
+        <IncludeBuildOutput>false</IncludeBuildOutput>
+        <!-- <IncludeSymbols>true</IncludeSymbols> -->
+        <PackageOutputPath>..\NugetPackages\</PackageOutputPath>
+        <FileVersion>1.1.0</FileVersion>
+        <Platforms>AnyCPU;x64</Platforms>
+    </PropertyGroup>
+
+    <!-- The following is used to pack from VS -->
+    <!--<ItemGroup>
+        <None Include="readme.txt">
+            <Pack>true</Pack>
+            <PackagePath>\</PackagePath>
+        </None>
+        
+        <None Include="..\build\release\netstandard2.0\Proxem.NumNet.Basic.dll">
+            <Pack>true</Pack>
+            <PackagePath>lib\netstandard2.0\</PackagePath>
+        </None>
+
+        <None Include="..\build\release\netstandard2.0\Proxem.NumNet.Basic.pdb">
+            <Pack>true</Pack>
+            <PackagePath>lib\netstandard2.0\</PackagePath>
+        </None>
+
+        <None Include="..\build\release\netstandard2.0\Proxem.NumNet.Basic.XML">
+            <Pack>true</Pack>
+            <PackagePath>lib\netstandard2.0\</PackagePath>
+        </None>
+
+        <None Include="..\build\release\netstandard2.0\Proxem.NumNet.Basic.deps.json">
+            <Pack>true</Pack>
+            <PackagePath>lib\netstandard2.0\</PackagePath>
+        </None>
+    </ItemGroup>-->
+    
+
+    <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netstandard2.0|AnyCPU'">
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+        <OutputPath>..\build\debug\</OutputPath>
+        <DefineConstants>DEBUG;TRACE</DefineConstants>
+        <PlatformTarget>x64</PlatformTarget>
+        <DocumentationFile>..\doc\Proxem.BlasNet.XML</DocumentationFile>
+    </PropertyGroup>
+    
+
+    <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netstandard2.0|x64'">
+      <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+      <OutputPath>..\build\debug\</OutputPath>
+      <DefineConstants>DEBUG;TRACE</DefineConstants>
+      <PlatformTarget>x64</PlatformTarget>
+      <DocumentationFile>..\doc\Proxem.BlasNet.XML</DocumentationFile>
+    </PropertyGroup>
+    
+    <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|netstandard2.0|AnyCPU'">
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+        <OutputPath>..\build\release\</OutputPath>
+        <DefineConstants>TRACE</DefineConstants>
+        <PlatformTarget>x64</PlatformTarget>
+        <Optimize>true</Optimize>
+        <DocumentationFile>..\doc\Proxem.BlasNet.XML</DocumentationFile>
+        </PropertyGroup>
+    
+    <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|netstandard2.0|x64'">
+      <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+      <OutputPath>..\build\release\</OutputPath>
+      <DefineConstants>TRACE</DefineConstants>
+      <PlatformTarget>x64</PlatformTarget>
+      <Optimize>true</Optimize>
+      <DocumentationFile>..\doc\Proxem.BlasNet.XML</DocumentationFile>
+    </PropertyGroup>
+    
+    <ItemGroup>
+      <Compile Remove="obsolete/**" />
+      <None Remove="*.tt" />
+    </ItemGroup>
+    
+    <ItemGroup>
+      <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
+    </ItemGroup>
+    
+    <ItemGroup>
+      <None Update="Blas.tt">
+        <Generator>TextTemplatingFileGenerator</Generator>
+      </None>
+      <None Update="Lapack.tt">
+        <Generator>TextTemplatingFileGenerator</Generator>
+      </None>
+    </ItemGroup>
+    
+</Project>
