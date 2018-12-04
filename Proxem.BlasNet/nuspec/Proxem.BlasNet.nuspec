@@ -4,7 +4,7 @@
     <id>Proxem.BlasNet</id>
     <version>1.5.1</version>
     <title>BlasNet</title>
-    <iconUrl>https://github.com/Proxem/NumNet/blob/master/logo/proxem.png?raw=true<iconUrl/>
+    <iconUrl>https://github.com/Proxem/NumNet/blob/master/logo/proxem.png?raw=true</iconUrl>
     <authors>Guillaume Wenzek, Jocelyn Coulmance, Thomas Perrais, Jean-Marc Marty</authors>
     <owners>Proxem</owners>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
