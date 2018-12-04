@@ -32,6 +32,15 @@ namespace Proxem.BlasNet
     public static class StartProvider
     {
         /// <summary>
+        /// Set Blas Provider as a DefaultBlas (pure C# implementation)
+        /// This will be way slower than when using MKL and Lapack functions won't be available
+        /// </summary>
+        public static void LaunchDefault()
+        {
+            Blas.Provider = new DefaultBlas();
+        }
+
+        /// <summary>
         /// Creates a new DynMkl with the given args and sets it as the default Blas implementation.
         /// </summary>
         public static void LaunchMklRt(int max = -1, string path = null)
