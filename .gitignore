@@ -4,6 +4,9 @@ bin
 obj
 /doc/_build/
 /doc/_doxy/
+/Proxem.BlasNet/obsolete/
+/dlls/
+
 /doc/*.XML
 packages
 
