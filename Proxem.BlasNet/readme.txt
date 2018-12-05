@@ -1,8 +1,8 @@
------------------------------
-------  NumNet-Basic --------
------------------------------
+-------------------------------
+------  Proxem.BlasNet --------
+-------------------------------
 
-Base operations on array used for higher level functions on NumNet arrays
+Base operations on array used for higher level functions in NumNet arrays.
 Blas Provider uses either 'mkl_rt.dll' ('libmkl_rt.so' on Linux) or 'mklml.dll' ('libmklml.so' in Linux) for those base operations
 A default provider is implemented in C# but we do not recommend using it as it is way slower.
 

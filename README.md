@@ -1,5 +1,5 @@
 # BlasNet
-BlasNet is an optimized library for basic linear algebra operations on arrays written in C\# and developped at [Proxem](https://proxem.com).
+BlasNet is an optimized library for basic linear algebra operations on arrays written in C\# and developed at [Proxem](https://proxem.com).
 
 ## Table of contents
 
@@ -11,7 +11,7 @@ BlasNet is an optimized library for basic linear algebra operations on arrays wr
 
 ## Requirements
 
-BlasNet was developped in .Net Standard 2.0 and is compatible with both .Net Framwork and .Net Core thus working on Windows and Linux platform.
+BlasNet is developed in .Net Standard 2.0 and is compatible with both .Net Framework and .Net Core thus working on Windows and Linux platform.
 For Mac OS users there shouldn't be any problem but we didn't test extensively.
 
 ### Intel MKL
@@ -22,7 +22,7 @@ In order to use MKL you must launch the provider in your code. This step depends
 #### Windows Users
 
 You first need to download [Intel's MKL](https://software.intel.com/en-us/mkl) libraries for Windows. Check that the folder contains `mkl_rt.dll` which is the main library used by BlasNet.
-To set the provider to use `mkl_rt.dll` for the low level array operations place the following line at the begining of your code :
+To set the provider to use `mkl_rt.dll` for the low level array operations place the following line at the beginning of your code :
 ```
 using BlasNet;
 
@@ -48,7 +48,7 @@ $  echo "/path/to/mkl/lib/" >> /etc/ld.so.conf.d/intel.conf
 $  ldconfig
 ```
 
-Now, to set the provider to use `libmkl_rt.so` for the low level operations place the following line at the begining of your code :
+Now, to set the provider to use `libmkl_rt.so` for the low level operations place the following line at the beginning of your code :
 
 ```
 using BlasNet;
