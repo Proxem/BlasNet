@@ -21,8 +21,9 @@ In order to use MKL you must launch the provider in your code. This step depends
 
 #### Windows Users
 
-You first need to download [Intel's MKL](https://software.intel.com/en-us/mkl) libraries for Windows. Check that the folder contains `mkl_rt.dll` which is the main library used by BlasNet.
+You first need to download [Intel's MKL](https://software.intel.com/en-us/mkl/choose-download/windows) libraries for Windows. Check that the folder contains `mkl_rt.dll` which is the main library used by BlasNet.
 To set the provider to use `mkl_rt.dll` for the low level array operations place the following line at the beginning of your code :
+
 ```
 using BlasNet;
 
@@ -35,6 +36,7 @@ public namespace Test
     }
 }
 ```
+
 where ```max``` is the max number of threads used by MKL (-1 to use the max number) and `path` is the path to `mkl_rt.dll`.
 
 #### Linux Users
