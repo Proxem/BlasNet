@@ -72,7 +72,11 @@ where `max` is the max number of threads used by MKL (-1 to use the max number).
 We provide a Nuget Package of **BlasNet** to facilitate its use. It's available on [Nuget.org](https://www.nuget.org/packages/Proxem.BlasNet/). 
 Symbols are also available to facilitate debugging inside the package.
 
-## Contact
+## Disclaimer
+
+This is not an official Proxem product.
+
+## Contact information
 
 If you can't make **BlasNet** work on your computer or if you have any tracks of improvement drop us an e-mail at one of the following address:
 - thp@proxem.com
