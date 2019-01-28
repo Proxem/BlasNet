@@ -90,8 +90,11 @@
     
     <ItemGroup>
       <Compile Remove="obsolete/**" />
-      <None Remove="*.tt" />
     </ItemGroup>
+    
+    <!--<ItemGroup>
+      <None Remove="*.tt" />
+    </ItemGroup>-->
     
     <ItemGroup>
       <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />

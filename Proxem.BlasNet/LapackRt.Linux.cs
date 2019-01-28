@@ -359,7 +359,7 @@ namespace Proxem.BlasNet
 
         /// <summary>
         /// computes the singular value decomposition (SVD) 
-        /// of a general rectangular single precision matrix A,
+        /// of a general rectangular single precision m * n matrix A,
         /// optionally the left and/or right singular vectors.
         /// A = U * Sigma * V^T 
         /// </summary>
@@ -370,7 +370,7 @@ namespace Proxem.BlasNet
         /// or 'N' (no col of U are computed)
         /// </param>
         /// <param name="jobvt">
-        /// 'A' (all m col of V^T are returned in vt), 
+        /// 'A' (all n col of V^T are returned in vt), 
         /// 'S' (min(m,n) col of V^T are returned in vt), 
         /// 'O' (min(m,n) col of V^T overwritten in a),
         /// or 'N' (no col of V^T are computed)
@@ -379,7 +379,7 @@ namespace Proxem.BlasNet
         /// <param name="n"> number of columns of a </param>
         /// <param name="a"> matrix a</param>
         /// <param name="lda"> leading dim of a </param>
-        /// <param name="s"></param>
+        /// <param name="s"> sigma diagonal matrix filled during calculations </param>
         /// <param name="u"> left matrix of SVD </param>
         /// <param name="ldu"> leading dimension of U</param>
         /// <param name="vt"> right matrix of SVD </param>
@@ -408,7 +408,7 @@ namespace Proxem.BlasNet
 
         /// <summary>
         /// computes the singular value decomposition (SVD) 
-        /// of a general rectangular double precision matrix A,
+        /// of a general rectangular double precision m * n matrix A,
         /// optionally the left and/or right singular vectors.
         /// A = U * Sigma * V^T 
         /// </summary>
@@ -419,7 +419,7 @@ namespace Proxem.BlasNet
         /// or 'N' (no col of U are computed)
         /// </param>
         /// <param name="jobvt">
-        /// 'A' (all m col of V^T are returned in vt), 
+        /// 'A' (all n col of V^T are returned in vt), 
         /// 'S' (min(m,n) col of V^T are returned in vt), 
         /// 'O' (min(m,n) col of V^T overwritten in a),
         /// or 'N' (no col of V^T are computed)
@@ -428,7 +428,7 @@ namespace Proxem.BlasNet
         /// <param name="n"> number of columns of a </param>
         /// <param name="a"> matrix a</param>
         /// <param name="lda"> leading dim of a </param>
-        /// <param name="s"></param>
+        /// <param name="s"> sigma diagonal matrix filled during calculations </param>
         /// <param name="u"> left matrix of SVD </param>
         /// <param name="ldu"> leading dimension of U</param>
         /// <param name="vt"> right matrix of SVD </param>
@@ -454,7 +454,7 @@ namespace Proxem.BlasNet
             int ldvt);
 
         /// <summary>
-        /// Singular Value Decomposition for general double precision rectangular matrix
+        /// Singular Value Decomposition for general double precision m * n rectangular matrix
         /// A = U*D*V^T
         /// </summary>
         /// <param name="jobz">
@@ -468,7 +468,7 @@ namespace Proxem.BlasNet
         /// <param name="n"> number of columns in a </param>
         /// <param name="a"> matrix a </param>
         /// <param name="lda"> leading dimension of a </param>
-        /// <param name="s"> temporary storage </param>
+        /// <param name="s"> sigma diagonal matrix of SVD filled during calculations </param>
         /// <param name="u"> U matrix of SVD </param>
         /// <param name="ldu"> leading dimension of U </param>
         /// <param name="vt"> V^T matrix of SVD </param>
@@ -492,7 +492,7 @@ namespace Proxem.BlasNet
             int ldvt);
 
         /// <summary>
-        /// Singular Value Decomposition for general single precision rectangular matrix
+        /// Singular Value Decomposition for general single precision m * n rectangular matrix
         /// A = U*D*V^T
         /// </summary>
         /// <param name="jobz">
@@ -506,7 +506,7 @@ namespace Proxem.BlasNet
         /// <param name="n"> number of columns in a </param>
         /// <param name="a"> matrix a </param>
         /// <param name="lda"> leading dimension of a </param>
-        /// <param name="s"> temporary storage </param>
+        /// <param name="s"> sigma diagonal matrix of SVD filled during calculations </param>
         /// <param name="u"> U matrix of SVD </param>
         /// <param name="ldu"> leading dimension of U </param>
         /// <param name="vt"> V^T matrix of SVD </param>
