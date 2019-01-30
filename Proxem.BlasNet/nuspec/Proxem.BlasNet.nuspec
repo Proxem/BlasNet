@@ -2,7 +2,7 @@
 <package  xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
   <metadata>    
     <id>Proxem.BlasNet</id>
-    <version>1.5.2</version>
+    <version>1.6</version>
     <title>BlasNet</title>
     <licenseUrl>https://github.com/Proxem/BlasNet/blob/master/LICENSE</licenseUrl>
     <iconUrl>https://github.com/Proxem/BlasNet/blob/master/logo/proxem.png?raw=true</iconUrl>
@@ -14,7 +14,7 @@
         Base package for optimized operations on arrays. 
         Uses Intel's MKL library to provide the main operations on arrays.
     </description>
-    <releaseNotes></releaseNotes>
+    <releaseNotes>update .tt files and documentation</releaseNotes>
     <copyright></copyright>
     <tags>arrays mkl base-functions</tags>
     <summary>Base operations on arrays using Intel MKL</summary>
