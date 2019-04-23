@@ -86,6 +86,16 @@ namespace Proxem.BlasNet
         void daxpy(int n, double a, double[] x, int offsetx, int incx, double[] y, int offsety, int incy);
 
         /// <summary>
+        /// Computes a vector-scalar product and adds the result to a vector. (y := a*x + y)
+        /// </summary>
+        void saxpy(int n, float a, ref float x, float[] y, int offsety, int incy);
+
+        /// <summary>
+        /// Computes a vector-scalar product and adds the result to a vector. (y := a*x + y)
+        /// </summary>
+        void daxpy(int n, double a, ref double x, double[] y, int offsety, int incy);
+
+        /// <summary>
         /// Computes the product of a vector by a scalar. (x = a*x)
         /// </summary>
         void sscal(int n, float a, float[] x, int offsetx, int incx);
@@ -312,6 +322,25 @@ namespace Proxem.BlasNet
         {
             Provider.daxpy(n, a, x, offsetx, incx, y, offsety, incy);
         }
+
+        /// <summary>
+        /// Computes a vector-scalar product and adds the result to a vector. (y := a*x + y)
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static void axpy(int n, float a, ref float x, float[] y, int offsety, int incy)
+        {
+            Provider.saxpy(n, a, ref x, y, offsety, incy);
+        }
+        
+        /// <summary>
+        /// Computes a vector-scalar product and adds the result to a vector. (y := a*x + y)
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static void axpy(int n, double a, ref double x, double[] y, int offsety, int incy)
+        {
+            Provider.daxpy(n, a, ref x, y, offsety, incy);
+        }
+
 
         /// <summary>
         /// Computes the product of a vector by a scalar. (x = a*x)
