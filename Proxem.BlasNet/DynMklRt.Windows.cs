@@ -157,6 +157,24 @@ namespace Proxem.BlasNet
                 cblas_daxpy(n, a, xp, incx, yp, incy);
             }
         }
+		
+		/// <summary>
+        /// performs y = ax + y. (single precision arrays)
+        /// </summary>
+        /// <param name="n"> number of elementary operations to perform </param>
+        /// <param name="a"></param>
+        /// <param name="x"> value to add to y </param>
+        /// <param name="y"> array </param>
+        /// <param name="offsety"> starting offset in receiving array y</param>
+        /// <param name="incy"> increment in receiving array </param>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public void daxpy(int n, double a, ref double x, double[] y, int offsety, int incy)
+        {
+            fixed (double* xp = &x, yp = &y[offsety])
+            {
+                cblas_daxpy(n, a, xp, 0, yp, incy);
+            }
+        }
 
         [DllImport(MKLRT_WINDOWS_DLL, CallingConvention = CallingConvention.Cdecl), SuppressUnmanagedCodeSecurity]
         static extern void cblas_dcscmm(int TransA, int m, int n, int k, double alpha, double* val, int* indx, int* pntrb, double* b, int ldb, double beta, double* c, int ldc);
@@ -321,6 +339,24 @@ namespace Proxem.BlasNet
             fixed (float* xp = &x[offsetx], yp = &y[offsety])
             {
                 cblas_saxpy(n, a, xp, incx, yp, incy);
+            }
+        }
+		
+		/// <summary>
+        /// performs y = ax + y. (single precision arrays)
+        /// </summary>
+        /// <param name="n"> number of elementary operations to perform </param>
+        /// <param name="a"></param>
+        /// <param name="x"> value to add to y </param>
+        /// <param name="y"> array </param>
+        /// <param name="offsety"> starting offset in receiving array y</param>
+        /// <param name="incy"> increment in receiving array </param>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public void saxpy(int n, float a, ref float x, float[] y, int offsety, int incy)
+        {
+            fixed (float* xp = &x, yp = &y[offsety])
+            {
+                cblas_saxpy(n, a, xp, 0, yp, incy);
             }
         }
 

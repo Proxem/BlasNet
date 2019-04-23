@@ -57,6 +57,63 @@ namespace Proxem.BlasNet
         }
 
         /// <summary>
+        /// performs y = ax + y. (single precision arrays)
+        /// </summary>
+        /// <param name="n"> number of elementary operations to perform </param>
+        /// <param name="a"></param>
+        /// <param name="x"> first array </param>
+        /// <param name="offsetx"> starting offset in copied array x </param>
+        /// <param name="incx"> increment in copied array </param>
+        /// <param name="y"> second array </param>
+        /// <param name="offsety"> starting offset in receiving array y</param>
+        /// <param name="incy"> increment in receiving array </param>
+        public void saxpy(int n, float a, float[] x, int offsetx, int incx, float[] y, int offsety, int incy)
+        {
+            for (int i = 0; i < n; ++i)
+            {
+                y[offsety] += a * x[offsetx];
+                offsetx += incx;
+                offsety += incy;
+            }
+        }
+
+        /// <summary>
+        /// performs y = ax + y. (single precision arrays)
+        /// </summary>
+        /// <param name="n"> number of elementary operations to perform </param>
+        /// <param name="a"></param>
+        /// <param name="x"> value to add to y </param>
+        /// <param name="y"> array </param>
+        /// <param name="offsety"> starting offset in receiving array y</param>
+        /// <param name="incy"> increment in receiving array </param>
+        public void saxpy(int n, float a, ref float x, float[] y, int offsety, int incy)
+        {
+            for (int i = 0; i < n; ++i)
+            {
+                y[offsety] += a * x;
+                offsety += incy;
+            }
+        }
+
+        /// <summary>
+        /// performs y = ax + y. (double precision arrays)
+        /// </summary>
+        /// <param name="n"> number of elementary operations to perform </param>
+        /// <param name="a"></param>
+        /// <param name="x"> value to add to y </param>
+        /// <param name="y"> array </param>
+        /// <param name="offsety"> starting offset in receiving array y</param>
+        /// <param name="incy"> increment in receiving array </param>
+        public void daxpy(int n, double a, ref double x, double[] y, int offsety, int incy)
+        {
+            for (int i = 0; i < n; ++i)
+            {
+                y[offsety] += a * x;
+                offsety += incy;
+            }
+        }
+
+        /// <summary>
         /// copy x to y (double precision arrays)
         /// </summary>
         /// <param name="n"> number of elements to copy </param>
@@ -256,27 +313,6 @@ namespace Proxem.BlasNet
             for (int i = 0; i < n; ++i)
             {
                 y[offsety] = x[offsetx];
-                offsetx += incx;
-                offsety += incy;
-            }
-        }
-
-        /// <summary>
-        /// performs y = ax + y. (single precision arrays)
-        /// </summary>
-        /// <param name="n"> number of elementary operations to perform </param>
-        /// <param name="a"></param>
-        /// <param name="x"> first array </param>
-        /// <param name="offsetx"> starting offset in copied array x </param>
-        /// <param name="incx"> increment in copied array </param>
-        /// <param name="y"> second array </param>
-        /// <param name="offsety"> starting offset in receiving array y</param>
-        /// <param name="incy"> increment in receiving array </param>
-        public void saxpy(int n, float a, float[] x, int offsetx, int incx, float[] y, int offsety, int incy)
-        {
-            for (int i = 0; i < n; ++i)
-            {
-                y[offsety] += a * x[offsetx];
                 offsetx += incx;
                 offsety += incy;
             }
